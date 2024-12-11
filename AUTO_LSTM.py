@@ -15,22 +15,22 @@ from sklearn.metrics import *
 import csv
 
 
-# neurons_number= [200,150,100,60,30,20,10,5,1]
+# neurons_number= [60,30,20,10,5,1] - 200,150, 100
 # window = [24,20,16,12,8,4]
 # drop_out= [0.9, 0.8, 0.7,0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0]
-# steps = [100, 50, 30, 20]
+# steps = [ 50, 30, 20]  - 100,
 
 
 # ПАРАМЕТРЫ
-secid = 'SBER'
-neurons_number = 30
-window = 20
+secid = 'TASB'
+neurons_number = 60
+window = 16
 num_param= 13
-drop_out= 0.2
+drop_out= 0.0
 steps = 50
-name = secid+ '_lstm_' + 'n'+str(neurons_number) + 'win'+str(window)+ 'd'+ str(drop_out)+'s'+ str(steps) +'np' + str(num_param)
+name = secid+ '_lstm_' + 'n'+str(neurons_number) + 'win'+str(window)+ 'd'+ str(drop_out).replace('.','_')+'s'+ str(steps) +'np' + str(num_param) + '.csv'
 
-num_lerning = 25
+num_lerning = 41
 
 
 
@@ -48,7 +48,7 @@ with open(name, 'w', newline='') as csvfile:
 
 
 # Здесь НАЧНЁМ подготваливать свои данные
-dataFrame = pd.read_csv('file_for_input/all_hour/SBER_tradestats_test_hour.csv ')
+dataFrame = pd.read_csv('file_for_input/all_hour/TASB_tradestats_test_hour.csv ')
 dataFrame['tradedate'] = dataFrame['tradedate'] + '-' + dataFrame['tradetime_hour'].astype(str)
 dataFrame = dataFrame.drop('tradetime_hour', axis=1)
 dataFrame = dataFrame.rename(columns={'tradedate': 'Date'})
