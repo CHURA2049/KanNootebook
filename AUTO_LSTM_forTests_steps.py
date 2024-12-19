@@ -200,7 +200,7 @@ for i in range(num_lerning):
 
 	print(result)
 
-
+	# комментарий
 	# Начинаем работу с X_final_test Y_final_test
 
 	y_pred_final_test = multivariate_lstm.predict(X_final_test) # Предсказываем значения

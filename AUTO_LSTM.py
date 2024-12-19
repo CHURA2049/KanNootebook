@@ -16,21 +16,20 @@ import csv
 
 
 # neurons_number= [60,30,20,10,5,1] - 200,150, 100
-# window = [24,20,16,12,8,4]
-# drop_out= [0.9, 0.8, 0.7,0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0]
+
 # steps = [ 50, 30, 20]  - 100,
 
 
 # ПАРАМЕТРЫ
 secid = 'TASB'
-neurons_number = 60
+neurons_number = 1
 window = 16
 num_param= 13
 drop_out= 0.0
-steps = 50
+steps = 30
 name = secid+ '_lstm_' + 'n'+str(neurons_number) + 'win'+str(window)+ 'd'+ str(drop_out).replace('.','_')+'s'+ str(steps) +'np' + str(num_param) + '.csv'
 
-num_lerning = 41
+num_lerning = 50
 
 
 
