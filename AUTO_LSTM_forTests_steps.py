@@ -132,7 +132,7 @@ multivariate_lstm.add(keras.layers.Dropout(drop_out))
 multivariate_lstm.add(keras.layers.Dense(2, activation='linear'))
 multivariate_lstm.compile(loss='mae', metrics=['mse'], optimizer='adam') # Было: metrics=['mae']
 multivariate_lstm.summary()
-for i in range(num_lerning):
+for i in 1:
 	history = multivariate_lstm.fit(X_train, y_train, epochs=steps)#,validation_split=0.4
 
 	# Forecast Plot with Dates on X-axis
@@ -170,15 +170,15 @@ for i in range(num_lerning):
 	#
 	#
 	#
-	# # Построение графика зависимости потерь от эпохи
-	# # plt.figure(figsize=(10, 6))
-	# plt.plot(history.history['loss'], label='Training Loss')
-	# plt.plot(history.history['mae'], label='Training MSE')
-	# plt.title('Model Training')
-	# plt.ylabel('Loss/MAE')
-	# plt.xlabel('Epoch')
-	# plt.legend()
-	# plt.show()
+	# Построение графика зависимости потерь от эпохи
+	plt.figure(figsize=(10, 6))
+	plt.plot(history.history['loss'], label='Training Loss')
+	plt.plot(history.history['mae'], label='Training MSE')
+	plt.title('Model Training')
+	plt.ylabel('Loss/MAE')
+	plt.xlabel('Epoch')
+	plt.legend()
+	plt.show()
 
 
 
